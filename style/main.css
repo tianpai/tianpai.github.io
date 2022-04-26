@@ -1,24 +1,4 @@
 body {
     background-color:#393939;
     font-family: 'Inter', sans-serif;
-    text-align: center;
-}
-
-h1 {
-    color: #4C9AD4;
-    font-size:100px;
-}
-
-p {
-    color: #EC7488;
-    font-size:30px;
-}
-
-.center {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
 }
