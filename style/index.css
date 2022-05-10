@@ -1,24 +1,12 @@
 h1 {
-    color: #4C9AD4;
-    font-size: 6vw;
+    color: #1781b5;
+    font-size: 7vw;
 }
 
 
 p {
-    color: #EC7488;
-    font-size: 20px;
-}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-li {
-    float: left;
-    padding: 20px;
+    color: #f9bd10;
+    font-size: 2vw;
 }
 
 .center {
@@ -28,7 +16,22 @@ li {
     transform: translateX(-50%) translateY(-50%);
 }
 
-#logo {
-    width: 70px;
-    padding: 50px;
+.right-align-tags{
+    position: absolute;
+    right: 0px;
+}
+
+
+footer{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    flex-direction: row;
+    justify-content: center;
+    bottom: 20px;
+    left: 50%;
+    right: 50%;
+    font-size: 2vw;
+    position: absolute;
+    color: #789B6A;
 }
