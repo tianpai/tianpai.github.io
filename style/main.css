@@ -9,23 +9,6 @@ a {
     padding: 14px 16px;
 }
 
-.navbar {
-    margin-right: 24px;
-    overflow: hidden;
-}
-
-.navbar a {
-    float: right;
-    font-size: 3vw;
-    height: inherit;
-    text-align: center;
-}
-
-.navbar a:hover{
-    background-color: #ffea611f;
-    color: #4C9AD4;
-}
-
 
 #logo {
     position: absolute;
