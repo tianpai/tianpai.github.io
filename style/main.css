@@ -29,8 +29,10 @@ a {
 
 #logo {
     position: absolute;
-    width: 100px;
+    width: 15vw;
     margin: 0;
     display: inline-block;
     background-size: 50px;
+    top: 5vh;
+    left: 5vh;
 }
