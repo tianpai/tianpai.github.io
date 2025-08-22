@@ -4,7 +4,7 @@ export function ProjectPage() {
   return (
     <PageContainer>
       <div className="flex justify-center items-center h-full">
-        <li>some</li>
+        coming sooooon
       </div>
     </PageContainer>
   );

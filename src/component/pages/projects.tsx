@@ -6,10 +6,6 @@ export function Project() {
       <div className="">
         <a href="https://www.github.com/tianpai/dailyrepo">Daily Repo</a>
       </div>
-
-      <div className="">
-        <a href="https://www.github.com/tianpai/dailyrepo">Daily Repo</a>
-      </div>
     </div>
   );
 }
