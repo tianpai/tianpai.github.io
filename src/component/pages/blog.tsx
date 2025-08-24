@@ -2,11 +2,10 @@ import PageContainer from "@/component/ui/page-container";
 import BlogCard from "@/component/ui/blog-card";
 import blogMeta from "@/data/blog-meta.json";
 
-// Convert the blog metadata to the format expected by BlogCard
 const blogPosts = Object.entries(blogMeta).map(([slug, meta]) => ({
   title: meta.title,
   excerpt: meta.excerpt,
-  date: "Dec 2024", // You can add dates to the metadata later
+  date: "Aug 2025",
   readTime: meta.readTime,
   slug,
 }));

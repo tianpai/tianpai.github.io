@@ -5,12 +5,10 @@ import LightRays from "@/component/background/spotlight";
 export default function PageContainer({ children }: React.PropsWithChildren) {
   return (
     <div className="relative h-screen overflow-hidden">
-      {/* Fixed navbar */}
       <div className="fixed top-0 left-0 right-0 z-50">
         <NavBar />
       </div>
-      
-      {/* Fixed background */}
+
       <div className="fixed inset-0 z-[-1]">
         <LightRays
           raysOrigin="top-center"
@@ -25,11 +23,8 @@ export default function PageContainer({ children }: React.PropsWithChildren) {
           className="custom-rays"
         />
       </div>
-      
-      {/* Scrollable content area */}
-      <div className="h-full overflow-y-auto pt-20">
-        {children}
-      </div>
+
+      <div className="h-full overflow-y-auto pt-20">{children}</div>
     </div>
   );
 }

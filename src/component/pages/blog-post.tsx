@@ -26,11 +26,11 @@ export function BlogPostPage() {
 
   return (
     <PageContainer>
-      <div className="flex justify-center items-start py-12">
-        <div className="responsive-card m-5 blog-content-bg p-8 rounded-xl">
+      <div className="flex justify-center items-start">
+        <div className="responsive-blog-post m-1 md:m-5 blog-content-bg p-4 md:p-8 rounded-xl">
           <Link
             to="/blog"
-            className="inline-flex items-center space-x-2 shine-hover text-sm mb-4"
+            className="inline-flex items-center space-x-2 shine-hover mb-4"
           >
             <ArrowLeft size={16} />
             <span>Back to blog</span>
@@ -48,7 +48,7 @@ export function BlogPostPage() {
           </div>
 
           <div
-            className="prose"
+            className="prose prose-lg [&_p]:text-sm"
             dangerouslySetInnerHTML={{ __html: post.content }}
           />
         </div>

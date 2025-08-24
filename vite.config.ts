@@ -13,4 +13,8 @@ export default defineConfig({
       "@": resolve(projectRootDir, "src"),
     },
   },
+  server: {
+    host: "0.0.0.0",
+    port: 3000,
+  },
 });
