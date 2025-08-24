@@ -24,7 +24,7 @@ export default function PageContainer({ children }: React.PropsWithChildren) {
         />
       </div>
 
-      <div className="h-full overflow-y-auto pt-20">{children}</div>
+      <div className="h-full overflow-y-auto pt-20 pb-20 md:pb-8">{children}</div>
     </div>
   );
 }
