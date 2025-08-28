@@ -111,6 +111,9 @@ body {
 .prose strong {
   font-weight: bold;
   color: oklch(92% 0.01 258.338);
+  text-shadow:
+    0 0 50px rgba(0, 229, 255, 0.6),
+    0 0 100px rgba(0, 229, 255, 0.3);
 }
 
 .prose a {
