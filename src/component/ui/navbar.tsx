@@ -52,25 +52,25 @@ export function NavBar() {
           to="/"
           className={`shine-hover ${isActive("/") ? "opacity-100 font-bold" : "opacity-70"}`}
         >
-          home
+          HOME
         </Link>
         <Link
           to="/projects"
           className={`shine-hover ${isActive("/projects") ? "opacity-100 font-bold" : "opacity-70"}`}
         >
-          projects
+          PROJECTS
         </Link>
         <Link
           to="/blog"
           className={`shine-hover ${isActive("/blog") ? "opacity-100 font-bold" : "opacity-70"}`}
         >
-          blogs
+          BLOGS
         </Link>
         <Link
           to="/about"
           className={`shine-hover ${isActive("/about") ? "opacity-100 font-bold" : "opacity-70"}`}
         >
-          About
+          ABOUT
         </Link>
       </div>
     </nav>

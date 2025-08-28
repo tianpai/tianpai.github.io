@@ -13,7 +13,7 @@ const blogPosts = Object.entries(blogMeta).map(([slug, meta]) => ({
 export function BlogPage() {
   return (
     <PageContainer>
-      <div className="flex justify-center items-start h-full">
+      <div className="flex flex-col items-center">
         {blogPosts.map((post) => (
           <BlogCard
             key={post.slug}
