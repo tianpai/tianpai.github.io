@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SpotlightCard from "./card";
 import { Compass, CodeXml, LibraryBig, Book, Wrench } from "lucide-react";
-import * as SiIcons from "react-icons/si";
-import * as DiIcons from "react-icons/di";
+import { iconRegistry } from "@/utils/icon-registry";
 
 interface BlogPost {
   title: string;
@@ -89,9 +88,7 @@ const TechStackIcons: React.FC<{ techStack: TechStack }> = ({ techStack }) => {
       <div className="flex space-x-3">
         {techStack.icons.map((techIcon, index) => {
           const { iconName, tooltipText } = techIcon;
-          const IconComponent = iconName.startsWith("Di")
-            ? DiIcons[iconName as keyof typeof DiIcons]
-            : SiIcons[iconName as keyof typeof SiIcons];
+          const IconComponent = iconRegistry[iconName as keyof typeof iconRegistry];
           const displayText = tooltipText || getDefaultTechName(iconName);
           return IconComponent ? (
             <div key={index} className="relative group">
