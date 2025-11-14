@@ -1,0 +1,18 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/gohugoio/hugoThemes#themetoml for an example
+
+name = "bearIM"
+license = "MIT"
+licenselink = ""
+description = "A customized take on Bear Blog with a warmer palette, project listings, and footer tweaks."
+homepage = ""
+demosite = ""
+tags = ["blog", "responsive", "minimal", "seo", "clean", "simple", "light", "minimalist", "mobile", "fast", "white", "minimalistic", "reading", "dark mode"]
+features = ["favicon", "seo", "no stylesheets", "no javascript", "rss", "dark mode"]
+min_version = "v0.110.0"
+# https://gohugo.io/content-management/taxonomies#default-taxonomies
+# https://gohugo.io/templates/taxonomy-templates/#example-list-tags-in-a-single-page-template
+# https://gohugo.io/templates/taxonomy-templates/#example-list-all-site-tags
+
+[author]
+  name = "Tianpai"

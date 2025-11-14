@@ -1,0 +1,14 @@
+# Hugo build output
+public/
+resources/
+hugo_stats.json
+.hugo_build.lock
+
+# Node dependencies
+node_modules/
+
+# macOS artifacts
+.DS_Store
+
+# Logs and temp files
+*.log

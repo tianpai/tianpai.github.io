@@ -1,0 +1,29 @@
+{{ define "main" }}
+<section class="projects">
+  {{ with .Content }}
+  <div class="projects-intro">
+    {{ . | safeHTML }}
+  </div>
+  {{ end }}
+
+  {{ range .Site.Data.projects }}
+  <article class="project-card">
+    <header class="project-card__header">
+      <h2>{{ .name }}</h2>
+      <div class="project-card__links">
+        {{ with .demo }}<a href="{{ . }}" target="_blank" rel="noopener">Live ↗</a>{{ end }}
+        {{ with .source }}<a href="{{ . }}" target="_blank" rel="noopener">Source</a>{{ end }}
+      </div>
+    </header>
+    <p>{{ .description }}</p>
+    {{ with .techstack }}
+    <div class="project-card__stack">
+      {{ range . }}
+      <span>{{ . }}</span>
+      {{ end }}
+    </div>
+    {{ end }}
+  </article>
+  {{ end }}
+</section>
+{{ end }}

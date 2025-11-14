@@ -1,0 +1,14 @@
+- name: "Daily Repo"
+  description: "Discover tomorrow's tech trends today. Track emerging GitHub repositories before they go viral."
+  techstack:
+    - TypeScript
+    - React
+    - NodeJS
+    - Bun
+    - NestJS
+    - Express
+    - MongoDB
+    - Vite
+    - Tailwind CSS
+  source: "https://github.com/tianpai/dailyrepo"
+  demo: "https://www.dailyrepo.tianpai.io"

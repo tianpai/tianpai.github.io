@@ -1,0 +1,18 @@
+{
+  "name": "bearim",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Customized Hugo theme inspired by Bear Blog.",
+  "main": "index.js",
+  "devDependencies": {
+    "js-beautify": "^1.15.4"
+  },
+  "scripts": {
+    "test": "npm run beautify",
+    "beautify": "js-beautify layouts/**/*.html -r"
+  },
+  "author": {
+    "name": "Tianpai"
+  },
+  "license": "MIT"
+}

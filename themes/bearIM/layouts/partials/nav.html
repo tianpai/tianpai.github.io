@@ -1,0 +1,12 @@
+<style>
+  #nav {
+    background-color: #cebb92;
+    text-decoration: none;
+    padding: 2px 8px;
+    border-radius: 0px;
+  }
+</style>
+
+{{ range .Site.Menus.main }}
+<a id="nav" href="{{ .URL }}">{{ .Name }}</a>
+{{ end }}
