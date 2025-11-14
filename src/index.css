@@ -1,11 +1,42 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
+
+@font-face {
+  font-family: "Berkeley Mono";
+  src: url("/fonts/BerkeleyMono-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  src: url("/fonts/BerkeleyMono-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  src: url("/fonts/BerkeleyMono-Oblique.woff2") format("woff2");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Berkeley Mono";
+  src: url("/fonts/BerkeleyMono-Bold-Oblique.woff2") format("woff2");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
 
 body {
   background-color: #000000;
   color: oklch(87.2% 0.01 258.338);
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Berkeley Mono", monospace;
 }
 
 .card-bg,
@@ -67,7 +98,7 @@ body {
 .prose {
   color: oklch(87.2% 0.01 258.338);
   line-height: 1.7;
-  font-family: "Space Grotesk", sans-serif;
+  font-family: "Berkeley Mono", monospace;
 }
 
 .prose h1 {

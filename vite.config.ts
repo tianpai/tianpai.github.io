@@ -21,11 +21,11 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'graphics-vendor': ['ogl'],
-          'icons-vendor': ['react-icons', 'lucide-react']
-        }
-      }
-    }
-  }
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          "graphics-vendor": ["ogl"],
+          "icons-vendor": ["react-icons", "lucide-react"],
+        },
+      },
+    },
+  },
 });
