@@ -1,4 +1,4 @@
-baseURL = 'https://blog.tianpai.io/'
+baseURL = 'https://www.tianpai.io/'
 languageCode = 'en-us'
 title = "Tianpai Blog"
 author = 'Tianpai Z'
