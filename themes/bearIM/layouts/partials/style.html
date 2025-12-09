@@ -1,10 +1,10 @@
 <style>
   :root {
-    --width: 720px;
-    --font-main: Verdana, sans-serif;
-    --font-secondary: Verdana, sans-serif;
-    --font-scale: 1em;
-    --background-color: #E6DCC7;
+    --width: 960px;
+    --font-main: "Cormorant Garamond", serif;
+    --font-secondary: "Sorts Mill Goudy", serif;
+    --font-scale: 1.5em;
+    --background-color: #e6dcc7;
     --heading-color: #272011;
     --text-color: #444;
     --link-color: #444;
@@ -14,7 +14,7 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background-color: #E6DCC7;
+      --background-color: #e6dcc7;
       --heading-color: #272011;
       --text-color: #444;
       --link-color: #444;
@@ -50,7 +50,7 @@
   a {
     color: var(--link-color);
     cursor: pointer;
-    text-decoration: underline;
+    text-decoration: none;
   }
 
   a:hover {
@@ -76,13 +76,17 @@
   }
 
   time {
-    font-family: monospace;
+    font-family: var(--font-main);
     font-style: normal;
-    font-size: 15px;
+    font-size: 1em;
   }
 
   main {
     line-height: 1.6;
+  }
+
+  p {
+    text-align: justify;
   }
 
   table {
@@ -184,13 +188,13 @@
     border-radius: 0;
     padding: 1.5rem;
     box-shadow: none;
-    border: 2px dashed var(--text-color);
   }
 
   .project-card__header {
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+    border-bottom: 2px dashed var(--text-color);
     gap: 1rem;
   }
 
@@ -216,7 +220,6 @@
 
   .site-footer {
     font-size: 0.9em;
-    border-top: 1px solid var(--text-color);
     margin-top: 3rem;
     padding-top: 1rem;
   }
@@ -224,5 +227,4 @@
   .site-footer a {
     text-decoration: none;
   }
-
 </style>
