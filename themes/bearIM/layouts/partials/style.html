@@ -227,4 +227,51 @@
   .site-footer a {
     text-decoration: none;
   }
+
+  .blog-container {
+    position: relative;
+  }
+
+  .table-of-contents {
+    position: fixed;
+    top: 350px;
+    left: calc(50% + 520px + 2rem);
+    width: 480px;
+    padding: 1rem;
+    font-size: 0.7em;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    border-left: 2px solid #dacbac;
+  }
+
+  .table-of-contents h2 {
+    margin-top: 0;
+    font-size: 1.1em;
+  }
+
+  .table-of-contents ul {
+    margin: 0.5rem 0 0 0;
+    padding-left: 1.5rem;
+  }
+
+  .table-of-contents li {
+    margin: 0.3rem 0;
+  }
+
+  .table-of-contents a {
+    text-decoration: none;
+  }
+
+  .table-of-contents a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 1400px) {
+    .table-of-contents {
+      position: static;
+      width: 100%;
+      margin: 2rem 0;
+      max-height: none;
+    }
+  }
 </style>
