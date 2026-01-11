@@ -1,3 +1,14 @@
+- name: "Kairos"
+  description: "AI-powered resume tailoring for job seekers. Build, customize, and optimize your resume for each application."
+  techstack:
+    - TypeScript
+    - Electron
+    - React
+    - Vite
+    - WebSocket
+    - WASM
+  source: "https://github.com/tianpai/kairos"
+
 - name: "Daily Repo"
   description: "Discover tomorrow's tech trends today. Track emerging GitHub repositories before they go viral."
   techstack:

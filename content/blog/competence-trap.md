@@ -1,5 +1,5 @@
 +++
-title = 'The Competence Trap: Why AI Makes Us Feel Smarter While Making Us Less Capable'
+title = 'When AI Does the Thinking'
 date = 2025-08-23T22:50:00Z
 description = 'Reflections on how AI can boost confidence while eroding core engineering competence.'
 tags = ['ai', 'llm', 'engineering']

@@ -1,7 +1,7 @@
 +++
-title = "Building DailyRepo: A Solo Developer's Journey from Scraper to Full-Stack App"
+title = "DailyRepo: Learning React the Hard Way"
 date = "2025-08-27T16:28:58-05:00"
-tags = ["project","dailyrepo", "dev-sotry"]
+tags = ["project","dailyrepo", "dev-story"]
 +++
 
 As a CS graduate whose group projects involved more project management than
