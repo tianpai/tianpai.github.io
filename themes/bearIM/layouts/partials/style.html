@@ -1,24 +1,23 @@
 <style>
   ::selection {
-    background-color: #d4c49f;
+    background-color: #e3c5a6;
   }
 
   :root {
-    --width: 960px;
+    --width: 700px;
     --font-main: "Cormorant Garamond", serif;
     --font-secondary: "Sorts Mill Goudy", serif;
-    --font-scale: 1.5em;
-    --background-color: #e6dcc7;
+    --font-scale: 1.1em;
+    --background-color: #efdecd;
     --heading-color: #272011;
     --text-color: #444;
-    --link-color: #444;
     --visited-color: #444;
     --blockquote-color: #222;
   }
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background-color: #e6dcc7;
+      --background-color: #efdecd;
       --heading-color: #272011;
       --text-color: #444;
       --link-color: #444;
@@ -31,7 +30,7 @@
     font-family: var(--font-secondary);
     font-size: var(--font-scale);
     margin: auto;
-    padding: 20px;
+    padding: 30px;
     max-width: var(--width);
     text-align: left;
     background-color: var(--background-color);
@@ -62,11 +61,11 @@
   }
 
   nav a {
-    margin-right: 8px;
+    margin-right: 0px;
   }
 
   nav {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
   }
 
   strong,
@@ -113,14 +112,14 @@
   }
 
   img {
-    max-width: 100%;
+    max-width: 80%;
   }
 
   code {
     font-family: monospace;
     padding: 2px;
     border-radius: 3px;
-    background-color: #dacbac;
+    background-color: #f5ebe0;
   }
 
   blockquote {
@@ -131,7 +130,7 @@
   }
 
   footer {
-    padding: 25px 0;
+    padding: 5px 0;
     text-align: center;
   }
 
@@ -153,18 +152,18 @@
     margin-block-start: 1em;
     margin-block-end: 1em;
     overflow-x: auto;
-    background-color: #dacbac;
+    background-color: #f5ebe0;
     padding: 1rem;
   }
 
   pre {
-    background-color: #dacbac !important;
+    background-color: #f5ebe0 !important;
     padding: 1rem;
     border-radius: 3px;
   }
 
   .highlight pre {
-    background-color: #dacbac !important;
+    background-color: #f5ebe0 !important;
   }
 
   pre code {
@@ -226,7 +225,7 @@
   }
 
   .project-card__stack span {
-    background-color: #dacbac;
+    background-color: #f5ebe0;
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.85em;
@@ -247,15 +246,16 @@
   }
 
   .table-of-contents {
+    display: none;
     position: fixed;
-    top: 350px;
-    left: calc(50% + 520px + 2rem);
+    top: 20px;
+    left: calc(78% + 2rem);
     width: 480px;
     padding: 1rem;
     font-size: 0.7em;
     max-height: calc(100vh - 120px);
     overflow-y: auto;
-    border-left: 2px solid #dacbac;
+    border-left: 2px solid #f5ebe0;
   }
 
   .table-of-contents h2 {

@@ -1,9 +1,16 @@
 baseURL = 'https://www.tianpai.io/'
-languageCode = 'en-us'
 title = "Tianpai Blog"
-author = 'Tianpai Z'
-copyright = 'Copyright © 2025, Tianpai Z'
 theme = 'bearIM'
+defaultContentLanguage = 'en'
+
+[languages]
+  [languages.en]
+    languageCode = 'en-us'
+    languageName = 'English'
+    weight = 1
+    [languages.en.params]
+      author = 'Tianpai Z'
+      copyright = 'Copyright © 2025, Tianpai Z'
 
 enableRobotsTXT = true
 # Bearblog keeps URLs simple by skipping taxonomy pages entirely.
