@@ -1,0 +1,7 @@
+<div class="header-row">
+  <a href="{{ "" | relURL }}" class="title">
+    <h2>{{ .Site.Title }}</h2>
+  </a>
+  <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">&#9790;</button>
+</div>
+<nav>{{- partial "nav.html" . -}}</nav>

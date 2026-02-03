@@ -1,6 +1,5 @@
 baseURL = 'https://www.tianpai.io/'
 title = "Tianpai Blog"
-theme = 'bearIM'
 defaultContentLanguage = 'en'
 
 [languages]
@@ -10,7 +9,14 @@ defaultContentLanguage = 'en'
     weight = 1
     [languages.en.params]
       author = 'Tianpai Z'
-      copyright = 'Copyright © 2025, Tianpai Z'
+      copyright = 'Copyright © 2026, Tianpai Z'
+  [languages.zh]
+    languageCode = 'zh'
+    languageName = '中文'
+    weight = 2
+    [languages.zh.params]
+      author = 'Tianpai Z'
+      copyright = 'Copyright © 2026'
 
 enableRobotsTXT = true
 # Bearblog keeps URLs simple by skipping taxonomy pages entirely.
@@ -22,7 +28,7 @@ ignoreErrors = ['error-disable-taxonomy']
   tags = '/blog/:slug'
 
 [params]
-  description = 'Experiments with Hugo Bear Blog.'
+  description = 'Blog.'
   favicon = 'images/favicon.png'
   images = ['images/share.png']
   title = "Tianpai's Blog"
@@ -31,6 +37,7 @@ ignoreErrors = ['error-disable-taxonomy']
 [markup]
   [markup.highlight]
     style = 'friendly'
+    noClasses = false
     lineNos = true
     lineNumbersInTable = false
     codeFences = true
