@@ -1,0 +1,62 @@
+---
+interface Props {
+  name: string;
+  type?: string;
+  description?: string;
+  links?: { label: string; url: string }[];
+  tags?: string[];
+}
+
+const { name, type, description, links = [], tags = [] } = Astro.props;
+---
+
+<li>
+  <div class="row">
+    <span class="name">{name}{type && <span class="type"> | {type}</span>}</span>
+    {links.length > 0 && (
+      <span class="links">
+        {links.map((l, i) => (
+          <>
+            {i > 0 && " | "}
+            <a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a>
+          </>
+        ))}
+      </span>
+    )}
+  </div>
+  {description && <div class="desc">{description}</div>}
+  {tags.length > 0 && <div class="tags">{tags.map((t) => <span>[{t}]</span>)}</div>}
+</li>
+
+<style>
+  li {
+    padding: 0.5rem 0;
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+  }
+  .name {
+    color: lightgray;
+  }
+  .type {
+    color: darkgrey;
+    font-size: 0.85em;
+  }
+  .links {
+    color: darkgrey;
+    white-space: nowrap;
+  }
+  .desc {
+    color: darkgrey;
+    font-size: 0.85em;
+    padding-top: 0.2rem;
+  }
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    color: gray;
+    font-size: 0.85em;
+    padding-top: 0.2rem;
+  }
+</style>

@@ -1,0 +1,91 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<style>
+article :global(h1) {
+    font-size: 1.7rem;
+    color: lightgray;
+}
+article :global(h2){
+    font-size: 1.5rem;
+    padding-top: 1em;
+    color: lightgray;
+}
+article :global(h3){
+    font-size: 1.25rem;
+    padding-top: 0.75em;
+    color: lightgray;
+}
+article :global(h4){
+    font-size: 1.1rem;
+    padding-top: 0.5em;
+    color: lightgray;
+}
+article :global(h5){
+    font-size: 1rem;
+    padding-top: 0.5em;
+    color: lightgray;
+}
+article :global(p){
+    text-align: justify;
+    padding-top: 1em;
+    padding-bottom: 1em;
+
+}
+article :global(strong){
+    color: orange;
+    font-style: italic;
+}
+.meta {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-top: 0.5em;
+}
+article :global(time){
+    font-style: italic;
+    color: darkgrey;
+}
+article :global(ul),
+article :global(ol) {
+    list-style-position: inside;
+}
+.meta ul {
+    display: flex;
+    list-style: none;
+    gap: 0.5rem;
+}
+.meta li {
+    color: gray;
+    padding: 2px;
+    font-size: 0.85em;
+}
+</style>
+
+<Base title={post.data.title}>
+  <article>
+    <h1>{post.data.title}</h1>
+    <div class="meta">
+      <time>{post.data.date.toLocaleDateString()}</time>
+      {post.data.tags && (
+        <ul>
+          {post.data.tags.map((tag: string) => <li>[{tag}]</li>)}
+        </ul>
+      )}
+    </div>
+    <Content />
+  </article>
+</Base>

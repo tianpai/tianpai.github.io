@@ -1,0 +1,34 @@
+---
+import Base from "../layouts/Base.astro";
+import Card from "../components/Card.astro";
+
+const projects = [
+  {
+    name: "kairos",
+    type: "ongoing",
+    description: "Cross-platform resume builder, tracker and tailor with AI",
+    links: [{ label: "src", url: "https://github.com/tianpai/kairos" }],
+  },
+  {
+    name: "dailyRepo",
+    type: "maintenance",
+    description: "Discover trending Github repos before they go viral",
+    links: [
+      { label: "demo", url: "https://dailyrepo.tianpai.io" },
+      { label: "src", url: "https://github.com/tianpai/dailyRepo" },
+    ],
+  },
+];
+---
+
+<Base title="Projects">
+  <ul>
+    {projects.map((p) => <Card {...p} />)}
+  </ul>
+</Base>
+
+<style>
+  ul {
+    list-style: none;
+  }
+</style>
