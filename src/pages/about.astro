@@ -1,0 +1,30 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<style>
+  ul {
+    list-style: none;
+  }
+  li {
+    display: flex;
+    gap: 1rem;
+    padding: 0.3rem 0;
+  }
+  span {
+    color: darkgrey;
+    min-width: 7rem;
+  }
+</style>
+
+<Base title="About">
+  <ul>
+    <li><span>name</span>Tianpai</li>
+    <li><span>github</span><a href="https://github.com/tianpai" target="_blank" rel="noopener noreferrer">github.com/tianpai</a></li>
+    <li><span>instagram</span><a href="https://www.instagram.com/tianpaiz" target="_blank" rel="noopener noreferrer">instagram.com/tianpaiz</a></li>
+    <li><span>pgp</span><a href="/public-key.asc">public-key.asc</a></li>
+    <li><span>editor</span><a href="https://neovim.io" target="_blank" rel="noopener noreferrer">nvim</a></li>
+    <li><span>font</span><a href="https://berkeleygraphics.com/typefaces/berkeley-mono/" target="_blank" rel="noopener noreferrer">berkeley mono</a></li>
+    <li><span>timezone</span>EST (UTC-5)</li>
+  </ul>
+</Base>

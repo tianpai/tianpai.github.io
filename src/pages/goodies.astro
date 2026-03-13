@@ -1,0 +1,29 @@
+---
+import Base from "../layouts/Base.astro";
+import Card from "../components/Card.astro";
+import { getCollection } from "astro:content";
+
+const items = (await getCollection("goodies")).sort(
+  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()
+);
+---
+
+<Base title="Goodies | Things I find interesting">
+  <ul>
+    {items.map((g) => (
+      <Card
+        name={g.data.name}
+        type={g.data.type}
+        description={g.data.description}
+        links={[{ label: "link", url: g.data.url }]}
+        tags={g.data.tags}
+      />
+    ))}
+  </ul>
+</Base>
+
+<style>
+  ul {
+    list-style: none;
+  }
+</style>
