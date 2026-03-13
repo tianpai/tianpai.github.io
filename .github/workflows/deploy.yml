@@ -18,12 +18,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v4
         with:
-          bun-version: latest
+          node-version: 22
+          cache: npm
 
-      - run: bun install
-      - run: bun run build
+      - run: npm ci
+      - run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
