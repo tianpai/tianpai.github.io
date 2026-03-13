@@ -79,7 +79,7 @@ article :global(ol) {
   <article>
     <h1>{post.data.title}</h1>
     <div class="meta">
-      <time>{post.data.date.toLocaleDateString()}</time>
+      <time>{post.data.date.toISOString().slice(0, 10)}</time>
       {post.data.tags && (
         <ul>
           {post.data.tags.map((tag: string) => <li>[{tag}]</li>)}

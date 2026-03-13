@@ -32,3 +32,16 @@ const isActive = (href: string) => href === "/" ? path === "/" || path.startsWit
     color: orange;
   }
 </style>
+
+<script>
+  import Snd from "snd-lib";
+
+  const snd = new Snd();
+
+  snd.load(Snd.KITS.SND01).then(() => {
+    document.querySelectorAll("nav a").forEach((link) => {
+      link.addEventListener("mousedown", () => snd.play("tap_03"));
+    });
+  });
+</script>
+
