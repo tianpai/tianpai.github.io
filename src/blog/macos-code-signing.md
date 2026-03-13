@@ -11,10 +11,10 @@ distribution outside the Mac App Store.
 
 ## Prerequisites
 
-- [Apple Developer account](https://developer.apple.com/programs/) (USD$99/year)
-- Electron app with electron-builder
+1. [Apple Developer account](https://developer.apple.com/programs/) (USD$99/year)
+2. Electron app with electron-builder
 
-## 1. Create Developer ID Application Certificate
+## Create Developer ID Application Certificate
 
 1. Go to [Apple certificates list](https://developer.apple.com/account/resources/certificates/list)
 2. Click `+` to create new certificate
@@ -41,7 +41,7 @@ distribution outside the Mac App Store.
 2. Double-click to install
 3. Select _login_ keychain when prompted
 
-## 2. Fix "Certificate Not Trusted" Error
+## Fix "Certificate Not Trusted" Error
 
 If you see "certificate is not trusted" in red:
 
@@ -51,7 +51,7 @@ If you see "certificate is not trusted" in red:
 
 Your certificate should now show as valid.
 
-## 3. Configure electron-builder
+## Configure electron-builder
 
 Add to `electron-builder.yml`:
 
@@ -69,7 +69,7 @@ mac:
 
 electron-builder automatically finds Developer ID Application certificates in your keychain.
 
-## 4. Create App-Specific Password
+## Create App-Specific Password
 
 Required for notarization:
 
@@ -78,7 +78,7 @@ Required for notarization:
 3. Name it (e.g., "Electron Notarization")
 4. Save the password (format: `xxxx-xxxx-xxxx-xxxx`)
 
-## 5. Local Build with Signing
+## Local Build with Signing
 
 Set environment variables and build:
 
@@ -98,7 +98,7 @@ notarizing      file=dist/mac-arm64/YourApp.app
 notarization successful
 ```
 
-## 6. Verify Signing & Notarization
+## Verify Signing & Notarization
 
 ```bash
 # Check code signature
@@ -108,7 +108,7 @@ codesign -dv --verbose=4 dist/mac-arm64/YourApp.app
 spctl -a -vvv -t install dist/mac-arm64/YourApp.app
 ```
 
-## 7. CI/CD Setup (GitHub Actions)
+## CI/CD Setup (GitHub Actions)
 
 ### Export Certificate as .p12
 
@@ -187,4 +187,6 @@ Verify `CSC_LINK` is properly base64 encoded and `CSC_KEY_PASSWORD` is correct.
 
 ### "No signing identity found"
 
-The certificate must have the private key attached. When exporting to .p12, make sure to export from "My Certificates" category which includes the private key.
+The certificate must have the private key attached. When exporting to .p12,
+make sure to export from "My Certificates" category which includes the private
+key.

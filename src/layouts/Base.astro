@@ -7,7 +7,10 @@ interface Props {
 
 const { title } = Astro.props;
 const path = Astro.url.pathname;
-const isActive = (href: string) => href === "/" ? path === "/" || path.startsWith("/blog") : path.startsWith(href);
+const isActive = (href: string) =>
+  href === "/"
+    ? path === "/" || path.startsWith("/blog")
+    : path.startsWith(href);
 ---
 
 <html lang="en">
@@ -18,7 +21,16 @@ const isActive = (href: string) => href === "/" ? path === "/" || path.startsWit
     <title>{title}</title>
   </head>
   <body>
-    <nav>[ <a href="/" class:list={[{ active: isActive("/") }]}>blog</a> | <a href="/projects" class:list={[{ active: isActive("/projects") }]}>projects</a> | <a href="/goodies" class:list={[{ active: isActive("/goodies") }]}>goodies</a> | <a href="/about" class:list={[{ active: isActive("/about") }]}>about</a> ]</nav>
+    <nav>
+      [ <a href="/" class:list={[{ active: isActive("/") }]}>blog</a> | <a
+        href="/projects"
+        class:list={[{ active: isActive("/projects") }]}>projects</a
+      > | <a href="/goodies" class:list={[{ active: isActive("/goodies") }]}
+        >goodies</a
+      > | <a href="/about" class:list={[{ active: isActive("/about") }]}
+        >about</a
+      > ]
+    </nav>
     <slot />
   </body>
 </html>
@@ -44,4 +56,3 @@ const isActive = (href: string) => href === "/" ? path === "/" || path.startsWit
     });
   });
 </script>
-

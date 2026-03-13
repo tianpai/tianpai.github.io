@@ -12,20 +12,35 @@ const { name, type, description, links = [], tags = [] } = Astro.props;
 
 <li>
   <div class="row">
-    <span class="name">{name}{type && <span class="type"> | {type}</span>}</span>
-    {links.length > 0 && (
-      <span class="links">
-        {links.map((l, i) => (
-          <>
-            {i > 0 && " | "}
-            <a href={l.url} target="_blank" rel="noopener noreferrer">{l.label}</a>
-          </>
-        ))}
-      </span>
-    )}
+    <span class="name">{name}{type && <span class="type"> | {type}</span>}</span
+    >
+    {
+      links.length > 0 && (
+        <span class="links">
+          [
+          {links.map((l, i) => (
+            <>
+              {i > 0 && " | "}
+              <a href={l.url} target="_blank" rel="noopener noreferrer">
+                {l.label}
+              </a>
+            </>
+          ))}
+          ]
+        </span>
+      )
+    }
   </div>
   {description && <div class="desc">{description}</div>}
-  {tags.length > 0 && <div class="tags">{tags.map((t) => <span>[{t}]</span>)}</div>}
+  {
+    tags.length > 0 && (
+      <div class="tags">
+        {tags.map((t) => (
+          <span>[{t}]</span>
+        ))}
+      </div>
+    )
+  }
 </li>
 
 <style>
@@ -38,6 +53,7 @@ const { name, type, description, links = [], tags = [] } = Astro.props;
   }
   .name {
     color: lightgray;
+    font-size: 1em;
   }
   .type {
     color: darkgrey;
