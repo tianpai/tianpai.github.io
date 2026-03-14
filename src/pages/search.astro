@@ -145,7 +145,6 @@ const resultLimit = 10;
 
       try {
         const pagefind = await initPagefind();
-        pagefind.preload(query);
         const search = await pagefind.debouncedSearch(query);
         if (activeRequest !== requestId || search === null) {
           return;
