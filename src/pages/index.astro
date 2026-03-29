@@ -1,36 +1,72 @@
 ---
 import Base from "../layouts/Base.astro";
-import { getCollection } from "astro:content";
-
-const posts = (await getCollection("blog")).sort(
-  (a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
-);
 ---
 
 <style>
-  ul {
-    list-style: none;
-  }
-  li {
+  .home {
     display: flex;
-    gap: 1rem;
-    padding: 0.3rem 0;
+    flex-direction: column;
+    gap: 2rem;
   }
-  time {
-    color: darkgrey;
-    white-space: nowrap;
+  .header h1 {
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    color: var(--text-heading);
+    text-transform: uppercase;
+  }
+  .header p {
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .section {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .row {
+    padding: 0.35rem 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .row a {
+    color: var(--text);
+  }
+  .row a:hover {
+    color: var(--link-hover);
   }
 </style>
 
-<Base title="Tianpai's Blog">
-  <ul>
-    {
-      posts.map((post) => (
-        <li>
-          <time>{post.data.date.toISOString().slice(0, 10)}</time>
-          <a href={`/blog/${post.id}/`}>{post.data.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+<Base title="Tianpai" hideNav>
+  <div class="home">
+    <div class="header">
+      <h1>Tianpai</h1>
+      <p>developer</p>
+    </div>
+
+    <div class="section">
+      <div class="row"><a href="/blog">blog</a></div>
+      <div class="row"><a href="/projects">projects</a></div>
+      <div class="row"><a href="/goodies">goodies</a></div>
+      <div class="row"><a href="/search">search</a></div>
+      <div class="row"><a href="/about">about</a></div>
+    </div>
+
+    <div class="section">
+      <div class="row"><a href="https://github.com/tianpai" target="_blank" rel="noopener noreferrer">github</a></div>
+    </div>
+  </div>
 </Base>
+
+<script>
+  import Snd from "snd-lib";
+
+  const snd = new Snd();
+
+  snd.load(Snd.KITS.SND01).then(() => {
+    document.querySelectorAll(".home a").forEach((link) => {
+      link.addEventListener("mousedown", () => snd.play("tap_03"));
+    });
+  });
+</script>

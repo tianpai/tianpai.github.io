@@ -3,14 +3,10 @@ import "../styles/global.css";
 
 interface Props {
   title: string;
+  hideNav?: boolean;
 }
 
-const { title } = Astro.props;
-const path = Astro.url.pathname;
-const isActive = (href: string) =>
-  href === "/"
-    ? path === "/" || path.startsWith("/blog")
-    : path.startsWith(href);
+const { title, hideNav = false } = Astro.props;
 ---
 
 <html lang="en">
@@ -21,18 +17,11 @@ const isActive = (href: string) =>
     <title>{title}</title>
   </head>
   <body>
-    <nav>
-      [ <a href="/" class:list={[{ active: isActive("/") }]}>blog</a> | <a
-        href="/projects"
-        class:list={[{ active: isActive("/projects") }]}>projects</a
-      > | <a href="/goodies" class:list={[{ active: isActive("/goodies") }]}
-        >goodies</a
-      > | <a href="/search" class:list={[{ active: isActive("/search") }]}
-        >search</a
-      > | <a href="/about" class:list={[{ active: isActive("/about") }]}
-        >about</a
-      > ]
-    </nav>
+    {!hideNav && (
+      <nav>
+        [ <a href="/">home</a> ]
+      </nav>
+    )}
     <slot />
   </body>
 </html>
@@ -41,9 +30,6 @@ const isActive = (href: string) =>
   nav {
     padding-bottom: 1.5rem;
     color: darkgrey;
-  }
-  .active {
-    color: orange;
   }
 </style>
 
@@ -58,3 +44,4 @@ const isActive = (href: string) =>
     });
   });
 </script>
+
