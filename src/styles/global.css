@@ -67,13 +67,30 @@ body {
   padding: 2rem 1rem;
 }
 
-a {
-  color: var(--link);
-  text-decoration: none;
+@keyframes hover-glow {
+  0%,
+  40% {
+    color: var(--link-hover);
+  }
+  100% {
+    color: orange;
+  }
 }
 
-a:hover {
+a,
+button {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+button:hover {
   color: var(--link-hover);
+  animation: hover-glow 5s ease forwards;
+  text-shadow:
+    0 0 0.5px currentColor,
+    0 0 0px currentColor;
 }
 
 h1,

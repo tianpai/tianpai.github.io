@@ -17,11 +17,13 @@ const { title, hideNav = false } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    {!hideNav && (
-      <nav>
-        [ <a href="/">home</a> ]
-      </nav>
-    )}
+    {
+      !hideNav && (
+        <nav>
+          [ <a href="/">home</a> ]
+        </nav>
+      )
+    }
     <slot />
   </body>
 </html>
@@ -44,4 +46,3 @@ const { title, hideNav = false } = Astro.props;
     });
   });
 </script>
-
