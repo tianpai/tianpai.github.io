@@ -8,18 +8,6 @@ import Base from "../layouts/Base.astro";
     flex-direction: column;
     gap: 2rem;
   }
-  .header h1 {
-    font-size: 1rem;
-    font-weight: 400;
-    letter-spacing: 0.05em;
-    color: var(--text-heading);
-    text-transform: uppercase;
-  }
-  .header p {
-    color: var(--text-muted);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
   .section {
     display: flex;
     flex-direction: column;
@@ -30,20 +18,10 @@ import Base from "../layouts/Base.astro";
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
-  .row a {
-    color: var(--text);
-  }
-  .row a:hover {
-    color: var(--link-hover);
-  }
 </style>
 
-<Base title="Tianpai" hideNav>
+<Base title="Tianpai" breadcrumbs={[{label: "tianpai", href: "/"}]}>
   <div class="home">
-    <div class="header">
-      <h1>Tianpai</h1>
-      <p>developer</p>
-    </div>
 
     <div class="section">
       <div class="row"><a href="/blog">blogs</a></div>

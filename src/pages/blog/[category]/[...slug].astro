@@ -112,7 +112,7 @@ const { Content } = await render(post);
   }
 </style>
 
-<Base title={post.data.title}>
+<Base title={post.data.title} breadcrumbTitle={post.data.title}>
   <article>
     <h1>{post.data.title}</h1>
     <div class="meta">

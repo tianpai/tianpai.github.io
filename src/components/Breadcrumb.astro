@@ -1,0 +1,33 @@
+---
+interface Props {
+  title?: string;
+}
+
+const { title } = Astro.props;
+
+const path = Astro.url.pathname.replace(/\/$/, "");
+const segments = path.split("/").filter(Boolean);
+
+const crumbs = [
+  { label: "tianpai", href: "/" },
+  ...segments.map((seg, i) => ({
+    label: i === segments.length - 1 && title ? title : seg,
+    href: "/" + segments.slice(0, i + 1).join("/"),
+  })),
+];
+---
+
+<nav>
+  {crumbs.map((crumb, i) => (
+    <><a href={crumb.href}>{crumb.label}</a>{i < crumbs.length - 1 && " > "}</>
+  ))}
+</nav>
+
+<style>
+  nav {
+    padding-bottom: 1.5rem;
+    color: darkgrey;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+</style>

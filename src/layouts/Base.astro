@@ -1,12 +1,13 @@
 ---
 import "../styles/global.css";
+import Breadcrumb from "../components/Breadcrumb.astro";
 
 interface Props {
   title: string;
-  hideNav?: boolean;
+  breadcrumbTitle?: string;
 }
 
-const { title, hideNav = false } = Astro.props;
+const { title, breadcrumbTitle } = Astro.props;
 ---
 
 <html lang="en">
@@ -17,23 +18,10 @@ const { title, hideNav = false } = Astro.props;
     <title>{title}</title>
   </head>
   <body>
-    {
-      !hideNav && (
-        <nav>
-          [ <a href="/">home</a> ]
-        </nav>
-      )
-    }
+    <Breadcrumb title={breadcrumbTitle} />
     <slot />
   </body>
 </html>
-
-<style>
-  nav {
-    padding-bottom: 1.5rem;
-    color: darkgrey;
-  }
-</style>
 
 <script>
   import Snd from "snd-lib";
