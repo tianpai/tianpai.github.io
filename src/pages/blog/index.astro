@@ -17,6 +17,14 @@ const categories = [...new Set(posts.map((p) => p.data.category))].sort();
     text-transform: uppercase;
     letter-spacing: 0.05em;
   }
+
+  @media (max-width: 480px) {
+    .categories {
+      min-height: calc(100dvh - 6rem);
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+  }
 </style>
 
 <Base title="Tianpai's Blog">

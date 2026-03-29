@@ -119,3 +119,13 @@ pre code {
   background: none;
   padding: 0;
 }
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    padding: 2rem 1rem;
+  }
+}
