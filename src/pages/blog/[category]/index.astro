@@ -1,0 +1,51 @@
+---
+import Base from "../../../layouts/Base.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  const categories = [...new Set(posts.map((p) => p.data.category))];
+  return categories.map((cat) => ({
+    params: { category: cat },
+    props: {
+      category: cat,
+      posts: posts
+        .filter((p) => p.data.category === cat)
+        .sort(
+          (a, b) =>
+            new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
+        ),
+    },
+  }));
+}
+
+const { category, posts } = Astro.props;
+---
+
+<style>
+  ul {
+    list-style: none;
+  }
+  li {
+    display: flex;
+    gap: 1rem;
+    padding: 0.3rem 0;
+  }
+  time {
+    color: darkgrey;
+    white-space: nowrap;
+  }
+</style>
+
+<Base title={`Tianpai's Blog — ${category}`}>
+  <ul>
+    {
+      posts.map((post) => (
+        <li>
+          <time>{post.data.date.toISOString().slice(0, 10)}</time>
+          <a href={`/blog/${category}/${post.id}/`}>{post.data.title}</a>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

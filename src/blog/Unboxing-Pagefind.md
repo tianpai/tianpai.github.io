@@ -1,6 +1,7 @@
 ---
 title: "Unboxing Pagefind for this blog site"
 date: "2026-03-14T19:21:45-04:00"
+category: "technical"
 tags: ["unboxing", "search", "PageFind"]
 ---
 

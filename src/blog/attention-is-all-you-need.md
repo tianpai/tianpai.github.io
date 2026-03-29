@@ -1,6 +1,7 @@
 ---
 title: "Attention is All You Need, Understanding is All We Missed"
 date: "2026-01-11T16:28:58-05:00"
+category: "opinion"
 tags: ["programming", "opinion"]
 ---
 

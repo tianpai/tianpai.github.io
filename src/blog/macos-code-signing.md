@@ -1,6 +1,7 @@
 ---
 title: "MacOS Code Signing & Notarization for Electron Apps"
 date: "2026-01-13T13:57:58-05:00"
+category: "technical"
 tags: ["project", "code signing", "technical", "electronJS"]
 ---
 

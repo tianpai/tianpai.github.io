@@ -1,6 +1,7 @@
 ---
 title: "Fix DailyRepo Semantic keyword analysis"
 date: "2026-01-26T13:22:30-05:00"
+category: "technical"
 tags: ["programming", "opinion", "Dailyrepo"]
 ---
 

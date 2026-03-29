@@ -1,11 +1,11 @@
 ---
-import Base from "../../layouts/Base.astro";
+import Base from "../../../layouts/Base.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog");
   return posts.map((post) => ({
-    params: { slug: post.id },
+    params: { category: post.data.category, slug: post.id },
     props: { post },
   }));
 }
@@ -31,10 +31,18 @@ const { Content } = await render(post);
     margin-top: 1.6em;
     color: lightgray;
   }
-  article :global(h2)::before { content: "## "; }
-  article :global(h3)::before { content: "### "; }
-  article :global(h4)::before { content: "#### "; }
-  article :global(h5)::before { content: "##### "; }
+  article :global(h2)::before {
+    content: "## ";
+  }
+  article :global(h3)::before {
+    content: "### ";
+  }
+  article :global(h4)::before {
+    content: "#### ";
+  }
+  article :global(h5)::before {
+    content: "##### ";
+  }
   article :global(p) {
     text-align: justify;
     margin-top: 1.6em;
@@ -121,9 +129,15 @@ const { Content } = await render(post);
     </div>
     <Content />
     <div class="bottom-bar">
-      [ <a href="#" id="top-btn">top</a> | <a href="#" id="copy-btn">copy as markdown</a> ]
+      [ <a href="#" id="top-btn">top</a> | <a href="#" id="copy-btn"
+        >copy as markdown</a
+      > ]
     </div>
-    <script type="application/json" id="post-markdown" set:html={JSON.stringify(post.body)} />
+    <script
+      type="application/json"
+      id="post-markdown"
+      set:html={JSON.stringify(post.body)}
+    />
   </article>
   <script>
     import Snd from "snd-lib";
@@ -131,7 +145,7 @@ const { Content } = await render(post);
     const snd = new Snd();
     snd.load(Snd.KITS.SND01);
 
-    document.getElementById('top-btn')!.addEventListener('click', (e) => {
+    document.getElementById("top-btn")!.addEventListener("click", (e) => {
       e.preventDefault();
       const start = window.scrollY;
       const duration = 150;
@@ -145,14 +159,20 @@ const { Content } = await render(post);
       requestAnimationFrame(step);
     });
 
-    document.getElementById('copy-btn')!.addEventListener('click', async (e) => {
-      e.preventDefault();
-      const md = JSON.parse(document.getElementById('post-markdown')!.textContent!);
-      await navigator.clipboard.writeText(md);
-      snd.play("button");
-      const btn = e.target as HTMLAnchorElement;
-      btn.textContent = 'copied as markdown';
-      setTimeout(() => { btn.textContent = 'copy as markdown'; }, 3000);
-    });
+    document
+      .getElementById("copy-btn")!
+      .addEventListener("click", async (e) => {
+        e.preventDefault();
+        const md = JSON.parse(
+          document.getElementById("post-markdown")!.textContent!,
+        );
+        await navigator.clipboard.writeText(md);
+        snd.play("button");
+        const btn = e.target as HTMLAnchorElement;
+        btn.textContent = "copied as markdown";
+        setTimeout(() => {
+          btn.textContent = "copy as markdown";
+        }, 3000);
+      });
   </script>
 </Base>

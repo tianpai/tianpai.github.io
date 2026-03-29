@@ -1,6 +1,7 @@
 ---
 title: "DailyRepo: Learning React the Hard Way"
 date: "2025-08-27T16:28:58-05:00"
+category: "opinion"
 tags: ["project", "dailyrepo", "dev-story"]
 ---
 

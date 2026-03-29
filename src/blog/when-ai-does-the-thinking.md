@@ -1,6 +1,7 @@
 ---
 title: "When AI Does the Thinking"
 date: "2025-08-23T22:50:00Z"
+category: "opinion"
 description: "Reflections on how AI can boost confidence while eroding core engineering competence."
 tags: ["ai", "llm", "engineering"]
 ---
