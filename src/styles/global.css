@@ -58,23 +58,13 @@ html {
   font-family: "Berkeley Mono", monospace;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 body {
   max-width: 720px;
   margin: 0 auto;
   padding: 2rem 1rem;
-}
-
-@keyframes hover-glow {
-  0%,
-  40% {
-    color: var(--link-hover);
-  }
-  100% {
-    color: orange;
-  }
 }
 
 a,

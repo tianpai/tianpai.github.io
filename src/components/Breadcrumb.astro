@@ -15,12 +15,18 @@ const crumbs = [
     href: "/" + segments.slice(0, i + 1).join("/"),
   })),
 ];
+const last = crumbs.length - 1;
 ---
 
 <nav>
-  {crumbs.map((crumb, i) => (
-    <><a href={crumb.href}>{crumb.label}</a>{i < crumbs.length - 1 && " > "}</>
-  ))}
+  {
+    crumbs.map((crumb, i) => (
+      <>
+        <a href={crumb.href}>{crumb.label}</a>
+        {i < last && " > "}
+      </>
+    ))
+  }
 </nav>
 
 <style>
