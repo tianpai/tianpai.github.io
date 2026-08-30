@@ -143,4 +143,4 @@ dots of the failures and refactors. This is the part where I like it, seeing
 the views from the mountain top, glancing at the path I took and the pitfalls I fell
 into and _Smirk_.
 
-The wind is colder now. Tiem to land somewhere myself.
+The wind is colder now. Time to land somewhere myself.
