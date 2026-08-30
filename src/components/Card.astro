@@ -4,15 +4,17 @@ interface Props {
   type?: string;
   description?: string;
   links?: { label: string; url: string }[];
-  tags?: string[];
 }
 
-const { name, type, description, links = [], tags = [] } = Astro.props;
+const { name, type, description, links = [] } = Astro.props;
 ---
 
 <li>
   <div class="row">
-    <span class="name">{name}{type && <span class="type"> | {type}</span>}</span
+    <span class="name"
+      >{name.toLocaleUpperCase()}{
+        type && <span class="type"> | {type}</span>
+      }</span
     >
     {
       links.length > 0 && (
@@ -32,15 +34,6 @@ const { name, type, description, links = [], tags = [] } = Astro.props;
     }
   </div>
   {description && <div class="desc">{description}</div>}
-  {
-    tags.length > 0 && (
-      <div class="tags">
-        {tags.map((t) => (
-          <span>[{t}]</span>
-        ))}
-      </div>
-    )
-  }
 </li>
 
 <style>
@@ -53,11 +46,9 @@ const { name, type, description, links = [], tags = [] } = Astro.props;
   }
   .name {
     color: lightgray;
-    font-size: 1em;
   }
   .type {
     color: darkgrey;
-    font-size: 0.85em;
   }
   .links {
     color: darkgrey;
@@ -65,14 +56,6 @@ const { name, type, description, links = [], tags = [] } = Astro.props;
   }
   .desc {
     color: darkgrey;
-    font-size: 0.85em;
-    padding-top: 0.2rem;
-  }
-  .tags {
-    display: flex;
-    gap: 0.5rem;
-    color: gray;
-    font-size: 0.85em;
     padding-top: 0.2rem;
   }
 </style>
