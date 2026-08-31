@@ -207,15 +207,9 @@ const resultLimit = 10;
     gap: 1rem;
   }
 
-  .search-form {
-    width: 100%;
-  }
-
   .search-bar {
     display: flex;
     align-items: center;
-    width: 100%;
-    color: var(--text);
   }
 
   .search-input {
@@ -225,7 +219,6 @@ const resultLimit = 10;
     background: transparent;
     color: var(--text);
     font: inherit;
-    font-size: 1rem;
     outline: none;
   }
 
@@ -235,13 +228,11 @@ const resultLimit = 10;
 
   .search-clear {
     width: 1ch;
-    margin-left: 0;
     margin-right: 1ch;
     border: 0;
     background: transparent;
     color: var(--text);
     font: inherit;
-    font-size: 1rem;
     opacity: 0;
     pointer-events: none;
     cursor: pointer;
@@ -283,8 +274,8 @@ const resultLimit = 10;
   }
 
   .search-results :global(mark) {
-    background: orange !important;
-    color: var(--bg) !important;
+    background: orange;
+    color: var(--bg);
   }
 
   .sr-only {
