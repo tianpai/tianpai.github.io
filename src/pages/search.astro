@@ -253,22 +253,22 @@ const resultLimit = 10;
     color: var(--text-muted);
   }
 
-  .search-result {
+  .search-results :global(.search-result) {
     display: grid;
     gap: 0.75rem;
   }
 
-  .search-result-title {
+  .search-results :global(.search-result-title) {
     color: lightgrey;
     font-size: 1.2rem;
     font-weight: 700;
   }
 
-  .search-result-title:hover {
+  .search-results :global(.search-result-title:hover) {
     color: orange;
   }
 
-  .search-result-excerpt {
+  .search-results :global(.search-result-excerpt) {
     color: darkgrey;
     line-height: 1.6;
   }

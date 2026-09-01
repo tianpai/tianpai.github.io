@@ -22,32 +22,32 @@ const { Content } = await render(post);
     font-size: 1rem;
     color: lightgray;
   }
-  article :global(h2),
-  article :global(h3),
-  article :global(h4),
-  article :global(h5) {
+  .post-content :global(h2),
+  .post-content :global(h3),
+  .post-content :global(h4),
+  .post-content :global(h5) {
     font-size: 1rem;
     font-weight: normal;
     margin-top: 1.6em;
     color: lightgray;
   }
-  article :global(h2)::before {
+  .post-content :global(h2)::before {
     content: "## ";
   }
-  article :global(h3)::before {
+  .post-content :global(h3)::before {
     content: "### ";
   }
-  article :global(h4)::before {
+  .post-content :global(h4)::before {
     content: "#### ";
   }
-  article :global(h5)::before {
+  .post-content :global(h5)::before {
     content: "##### ";
   }
-  article :global(p) {
+  .post-content :global(p) {
     text-align: justify;
     margin-top: 1.5em;
   }
-  article :global(strong) {
+  .post-content :global(strong) {
     color: orange;
   }
   .meta {
@@ -60,32 +60,32 @@ const { Content } = await render(post);
     font-style: italic;
     color: darkgrey;
   }
-  article :global(ul),
-  article :global(ol) {
+  .post-content :global(ul),
+  .post-content :global(ol) {
     list-style-position: inside;
     margin-top: 0.4em;
   }
-  article :global(li) :global(ul),
-  article :global(li) :global(ol) {
+  .post-content :global(li) :global(ul),
+  .post-content :global(li) :global(ol) {
     padding-left: 2em;
   }
-  article :global(table) {
+  .post-content :global(table) {
     margin-top: 1.6em;
     border-collapse: collapse;
     width: 100%;
     border: 1px solid #444;
   }
-  article :global(th),
-  article :global(td) {
+  .post-content :global(th),
+  .post-content :global(td) {
     border: 1px solid #444;
     padding: 0.4em 0.8em;
     text-align: left;
   }
-  article :global(th) {
+  .post-content :global(th) {
     color: lightgray;
     border-bottom: 2px solid #666;
   }
-  article :global(tr:nth-child(even)) {
+  .post-content :global(tr:nth-child(even)) {
     background: rgba(255, 255, 255, 0.02);
   }
   .meta ul {
@@ -125,7 +125,9 @@ const { Content } = await render(post);
         )
       }
     </div>
-    <Content />
+    <div class="post-content">
+      <Content />
+    </div>
     <div class="bottom-bar">
       [ <a href="#" id="top-btn">top</a> | <a href="#" id="copy-btn"
         >copy as markdown</a
