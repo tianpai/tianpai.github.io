@@ -1,38 +1,14 @@
 ---
 import Base from "../../../layouts/Base.astro";
+import PostList from "../../../components/PostList.astro";
 import { getCollection } from "astro:content";
 
+const category = "All";
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime(),
 );
 ---
 
-<style>
-  ul {
-    list-style: none;
-  }
-  li {
-    display: flex;
-    gap: 1rem;
-    padding: 0.3rem 0;
-  }
-  time {
-    color: darkgrey;
-    white-space: nowrap;
-  }
-</style>
-
-<Base title="Tianpai — All">
-  <ul>
-    {
-      posts.map((post) => (
-        <li>
-          <time>{post.data.date.toISOString().slice(0, 10)}</time>
-          <a href={`/blog/${post.data.category}/${post.id}/`}>
-            {post.data.title}
-          </a>
-        </li>
-      ))
-    }
-  </ul>
+<Base title={`Blog — ${category}`}>
+  <PostList posts={posts} />
 </Base>
