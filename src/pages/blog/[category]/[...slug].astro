@@ -140,10 +140,7 @@ const { Content } = await render(post);
     />
   </article>
   <script>
-    import Snd from "snd-lib";
-
-    const snd = new Snd();
-    snd.load(Snd.KITS.SND01);
+    import { playSound } from "../../../scripts/sound";
 
     document.getElementById("top-btn")!.addEventListener("click", (e) => {
       e.preventDefault();
@@ -167,7 +164,7 @@ const { Content } = await render(post);
           document.getElementById("post-markdown")!.textContent!,
         );
         await navigator.clipboard.writeText(md);
-        snd.play("button");
+        void playSound("button");
         const btn = e.target as HTMLAnchorElement;
         btn.textContent = "copied as markdown";
         setTimeout(() => {

@@ -26,25 +26,17 @@ import Base from "../layouts/Base.astro";
 <Base title="Tianpai">
   <div class="home">
     <div class="section">
-      <div class="row"><a href="/blog">blogs</a></div>
-      <div class="row"><a href="/projects">projects</a></div>
+      <div class="row"><a href="/blog" data-sound="tap_03">blogs</a></div>
+      <div class="row">
+        <a href="/projects" data-sound="tap_03">projects</a>
+      </div>
     </div>
 
     <div class="section">
-      <div class="row"><a href="/search">search</a></div>
-      <div class="row"><a href="/about">about</a></div>
+      <div class="row">
+        <a href="/search" data-sound="tap_03">search</a>
+      </div>
+      <div class="row"><a href="/about" data-sound="tap_03">about</a></div>
     </div>
   </div>
 </Base>
-
-<script>
-  import Snd from "snd-lib";
-
-  const snd = new Snd();
-
-  snd.load(Snd.KITS.SND01).then(() => {
-    document.querySelectorAll(".home a").forEach((link) => {
-      link.addEventListener("mousedown", () => snd.play("tap_03"));
-    });
-  });
-</script>

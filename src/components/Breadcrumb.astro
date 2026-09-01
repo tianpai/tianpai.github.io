@@ -22,7 +22,7 @@ const last = crumbs.length - 1;
   {
     crumbs.map((crumb, i) => (
       <>
-        <a href={crumb.href}>{crumb.label}</a>
+        <a href={crumb.href} data-sound="tap_03">{crumb.label}</a>
         {i < last && " > "}
       </>
     ))

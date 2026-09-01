@@ -24,13 +24,17 @@ const { title, breadcrumbTitle } = Astro.props;
 </html>
 
 <script>
-  import Snd from "snd-lib";
+  import { playSound } from "../scripts/sound";
 
-  const snd = new Snd();
+  document.addEventListener("mousedown", (event) => {
+    if (!(event.target instanceof Element)) {
+      return;
+    }
 
-  snd.load(Snd.KITS.SND01).then(() => {
-    document.querySelectorAll("nav a").forEach((link) => {
-      link.addEventListener("mousedown", () => snd.play("tap_03"));
-    });
+    const target = event.target.closest<HTMLElement>("[data-sound]");
+    const sound = target?.dataset.sound;
+    if (sound) {
+      void playSound(sound);
+    }
   });
 </script>
