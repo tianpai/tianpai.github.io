@@ -18,30 +18,15 @@ const { Content } = await render(post);
   article {
     padding-bottom: 6rem;
   }
-  article h1 {
-    font-size: 1rem;
-    color: var(--text);
-  }
   .post-content :global(h2),
   .post-content :global(h3),
   .post-content :global(h4),
   .post-content :global(h5) {
     font-size: 1rem;
     font-weight: normal;
+    text-align: center;
     margin-top: 1.6em;
     color: var(--text);
-  }
-  .post-content :global(h2)::before {
-    content: "## ";
-  }
-  .post-content :global(h3)::before {
-    content: "### ";
-  }
-  .post-content :global(h4)::before {
-    content: "#### ";
-  }
-  .post-content :global(h5)::before {
-    content: "##### ";
   }
   .post-content :global(p) {
     text-align: justify;
@@ -51,13 +36,7 @@ const { Content } = await render(post);
     color: var(--accent);
   }
   .meta {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
     padding-top: 0.5em;
-  }
-  article time {
-    font-style: italic;
     color: var(--text-muted);
   }
   .post-content :global(ul),
@@ -88,16 +67,6 @@ const { Content } = await render(post);
   .post-content :global(tr:nth-child(even)) {
     background: rgba(255, 255, 255, 0.02);
   }
-  .meta ul {
-    display: flex;
-    list-style: none;
-    gap: 0.5rem;
-  }
-  .meta li {
-    color: var(--text-muted);
-    padding: 2px;
-    font-size: 0.85em;
-  }
   .bottom-bar {
     margin-top: 3rem;
     color: var(--text-muted);
@@ -112,19 +81,6 @@ const { Content } = await render(post);
 
 <Base title={post.data.title} breadcrumbTitle={post.data.title}>
   <article>
-    <h1>{post.data.title}</h1>
-    <div class="meta">
-      <time>{post.data.date.toISOString().slice(0, 10)}</time>
-      {
-        post.data.tags && (
-          <ul>
-            {post.data.tags.map((tag: string) => (
-              <li>[{tag}]</li>
-            ))}
-          </ul>
-        )
-      }
-    </div>
     <div class="post-content">
       <Content />
     </div>
@@ -133,6 +89,20 @@ const { Content } = await render(post);
         >copy as markdown</a
       > ]
     </div>
+    {
+      post.data.tags && (
+        <div class="meta">
+          [
+          {post.data.tags.map((tag: string, index: number) => (
+            <>
+              {index > 0 && " | "}
+              {tag}
+            </>
+          ))}
+          ]
+        </div>
+      )
+    }
     <script
       type="application/json"
       id="post-markdown"
