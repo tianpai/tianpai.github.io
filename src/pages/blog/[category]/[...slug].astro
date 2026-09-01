@@ -20,7 +20,7 @@ const { Content } = await render(post);
   }
   article h1 {
     font-size: 1rem;
-    color: lightgray;
+    color: var(--text);
   }
   .post-content :global(h2),
   .post-content :global(h3),
@@ -29,7 +29,7 @@ const { Content } = await render(post);
     font-size: 1rem;
     font-weight: normal;
     margin-top: 1.6em;
-    color: lightgray;
+    color: var(--text);
   }
   .post-content :global(h2)::before {
     content: "## ";
@@ -48,7 +48,7 @@ const { Content } = await render(post);
     margin-top: 1.5em;
   }
   .post-content :global(strong) {
-    color: orange;
+    color: var(--accent);
   }
   .meta {
     display: flex;
@@ -58,7 +58,7 @@ const { Content } = await render(post);
   }
   article time {
     font-style: italic;
-    color: darkgrey;
+    color: var(--text-muted);
   }
   .post-content :global(ul),
   .post-content :global(ol) {
@@ -73,17 +73,17 @@ const { Content } = await render(post);
     margin-top: 1.6em;
     border-collapse: collapse;
     width: 100%;
-    border: 1px solid #444;
+    border: 1px solid var(--border);
   }
   .post-content :global(th),
   .post-content :global(td) {
-    border: 1px solid #444;
+    border: 1px solid var(--border);
     padding: 0.4em 0.8em;
     text-align: left;
   }
   .post-content :global(th) {
-    color: lightgray;
-    border-bottom: 2px solid #666;
+    color: var(--text);
+    border-bottom: 2px solid var(--border);
   }
   .post-content :global(tr:nth-child(even)) {
     background: rgba(255, 255, 255, 0.02);
@@ -94,19 +94,19 @@ const { Content } = await render(post);
     gap: 0.5rem;
   }
   .meta li {
-    color: gray;
+    color: var(--text-muted);
     padding: 2px;
     font-size: 0.85em;
   }
   .bottom-bar {
     margin-top: 3rem;
-    color: #666;
+    color: var(--text-muted);
   }
   .bottom-bar a {
-    color: #666;
+    color: var(--link);
   }
   .bottom-bar a:hover {
-    color: #aaa;
+    color: var(--link-hover);
   }
 </style>
 
